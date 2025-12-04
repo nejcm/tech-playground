@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { config } from "dotenv";
 import { defineConfig } from "drizzle-kit";
 import { env } from "./src/env";
+=======
+import { config } from 'dotenv';
+import { defineConfig } from 'drizzle-kit';
+import { env } from './src/env';
+>>>>>>> develop
 
 config();
 
