@@ -4,7 +4,7 @@
     "**/*.tsx",
     "eslint.config.js",
     ".oxlintrc.json",
-    "prettier.config.js",
+    ".oxfmtrc.json",
     "vite.config.js"
   ],
   "compilerOptions": {

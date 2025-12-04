@@ -1,7 +1,3 @@
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { showSubmittedData } from '@/lib/show-submitted-data';
 import { Button } from '@/components/ui/button';
 import {
   Dialog,
@@ -14,9 +10,13 @@ import {
 } from '@/components/ui/dialog';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { showSubmittedData } from '@/lib/show-submitted-data';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 // Avoid referencing FileList during SSR where it's not defined
-const fileSchemaBase = typeof FileList === 'undefined' ? z.any() : z.instanceof(FileList);
+const fileSchemaBase = typeof FileList === 'undefined' ? z.array(z.any()) : z.instanceof(FileList);
 
 const formSchema = z.object({
   file: fileSchemaBase
@@ -24,7 +24,7 @@ const formSchema = z.object({
       message: 'Please upload a file',
     })
     .refine(
-      (files) => !!files && files.length > 0 && ['text/csv'].includes(files?.[0]?.type),
+      (files) => !!files && files.length > 0 && ['text/csv'].includes(String(files?.[0]?.type)),
       'Please upload csv format.',
     ),
 });

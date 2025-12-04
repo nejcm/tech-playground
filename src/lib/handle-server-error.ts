@@ -12,7 +12,7 @@ export function handleServerError(error: unknown) {
   }
 
   if (error instanceof HTTPError) {
-    errMsg = String(error?.response);
+    errMsg = JSON.stringify(error?.response);
   }
 
   toast.error(errMsg);

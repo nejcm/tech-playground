@@ -1,7 +1,7 @@
+import { handleServerError } from '@/lib/handle-server-error';
+import { useAuthStore } from '@/stores/auth-store';
 import { QueryCache, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HTTPError } from 'ky';
-import { useAuthStore } from '@/stores/auth-store';
-import { handleServerError } from '@/lib/handle-server-error';
 
 const isDev = import.meta.env.DEV;
 const isProd = import.meta.env.PROD;
