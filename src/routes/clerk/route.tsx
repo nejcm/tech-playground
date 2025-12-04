@@ -1,20 +1,21 @@
-import { createFileRoute, Outlet } from '@tanstack/react-router';
-import { ClerkProvider } from '@clerk/clerk-react';
-import { ExternalLink, Key } from 'lucide-react';
-import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Separator } from '@/components/ui/separator';
-import { SidebarTrigger } from '@/components/ui/sidebar';
 import { ConfigDrawer } from '@/components/config-drawer';
 import { AuthenticatedLayout } from '@/components/layout/authenticated-layout';
 import { Main } from '@/components/layout/main';
 import { ThemeSwitch } from '@/components/theme-switch';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { Separator } from '@/components/ui/separator';
+import { SidebarTrigger } from '@/components/ui/sidebar';
+import { ClerkProvider } from '@clerk/clerk-react';
+import { createFileRoute, Outlet } from '@tanstack/react-router';
+import { ExternalLink, Key } from 'lucide-react';
+import { env } from '../../env';
 
 export const Route = createFileRoute('/clerk')({
   component: RouteComponent,
 });
 
 // Import your Publishable Key
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+const PUBLISHABLE_KEY = env.VITE_CLERK_PUBLISHABLE_KEY
 
 function RouteComponent() {
   if (!PUBLISHABLE_KEY) {

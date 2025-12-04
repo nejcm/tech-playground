@@ -1,10 +1,10 @@
-import { z } from 'zod';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { showSubmittedData } from '@/lib/show-submitted-data';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { showSubmittedData } from '@/lib/show-submitted-data';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 const items = [
   {
@@ -77,7 +77,7 @@ export function DisplayForm() {
                             checked={field.value?.includes(item.id)}
                             onCheckedChange={(checked) => {
                               return checked
-                                ? field.onChange([...field.value, item.id])
+                                ? field.onChange([...(field.value || []), item.id])
                                 : field.onChange(field.value?.filter((value) => value !== item.id));
                             }}
                           />
