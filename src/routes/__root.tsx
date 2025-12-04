@@ -37,6 +37,10 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         name: 'theme-color',
         content: '#fff',
       },
+      {
+        name: 'apple-mobile-web-app-title',
+        content: 'NM',
+      },
     ],
     links: [
       {
@@ -75,10 +79,6 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         rel: 'apple-touch-icon',
         sizes: '180x180',
         href: '/favicon/apple-touch-icon.png',
-      },
-      {
-        name: 'apple-mobile-web-app-title',
-        content: 'NM',
       },
       {
         rel: 'manifest',
