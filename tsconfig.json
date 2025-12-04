@@ -1,5 +1,12 @@
 {
-  "include": ["**/*.ts", "**/*.tsx", "eslint.config.js", ".oxlintrc.json", "prettier.config.js", "vite.config.js"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "eslint.config.js",
+    ".oxlintrc.json",
+    "prettier.config.js",
+    "vite.config.js"
+  ],
   "compilerOptions": {
     "target": "ES2022",
     "jsx": "react-jsx",
@@ -20,7 +27,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "baseUrl": ".",
+    "noImplicitAny": true,
     "paths": {
       "@/*": ["./src/*"]
     }
