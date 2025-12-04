@@ -3,7 +3,8 @@ import { createEnv } from '@t3-oss/env-core';
 
 export const env = createEnv({
   server: {
-    SERVER_URL: z.string().url().optional(),
+    SERVER_URL: z.url().optional(),
+    DATABASE_URL: z.url(),
   },
 
   /**
