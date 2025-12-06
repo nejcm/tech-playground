@@ -19,6 +19,9 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     title: 'Shadcn Admin',
     meta: [
       {
+        title: 'Shadcn Admin',
+      },
+      {
         charSet: 'utf-8',
       },
       {
